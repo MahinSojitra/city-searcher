@@ -39,16 +39,10 @@ $(document).ready(function () {
       type: "GET",
       data: { name: city },
       success: function (response) {
-        if (response) {
-          updateCityDetails(response);
-        } else {
-          noDataMessage.removeClass("d-none");
-        }
+        updateCityDetails(response);
       },
-      error: function () {
-        noDataMessage
-          .text("Error occurs in fetching data.")
-          .removeClass("d-none");
+      error: function (error) {
+        noDataMessage.text(error).removeClass("d-none");
       },
       complete: function () {
         searchBtn.prop("disabled", false);
