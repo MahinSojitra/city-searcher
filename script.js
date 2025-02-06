@@ -41,8 +41,8 @@ $(document).ready(function () {
       success: function (response) {
         updateCityDetails(response);
       },
-      error: function (error) {
-        noDataMessage.text(error).removeClass("d-none");
+      error: function (response) {
+        noDataMessage.text(response.error).removeClass("d-none");
       },
       complete: function () {
         searchBtn.prop("disabled", false);
