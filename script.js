@@ -37,7 +37,7 @@ $(document).ready(function () {
     $.ajax({
       url: API_URL,
       type: "GET",
-      data: { city: city },
+      data: { name: city },
       success: function (response) {
         if (response) {
           updateCityDetails(response);
