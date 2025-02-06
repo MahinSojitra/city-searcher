@@ -40,7 +40,6 @@ $(document).ready(function () {
       data: { city: city },
       success: function (response) {
         if (response) {
-          console.log(response);
           updateCityDetails(response);
         } else {
           noDataMessage.removeClass("d-none");
