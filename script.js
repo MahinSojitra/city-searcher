@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const API_URL = "/api/fetch_api_data";
+  const API_URL = "/api/city";
   const cityForm = $("#cityForm");
   const searchBtn = $("#searchBtn");
   const cityInput = $("#city");
