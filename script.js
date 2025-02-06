@@ -1,6 +1,5 @@
 $(document).ready(function () {
-  const API_KEY = process.env.API_KEY;
-  const API_URL = "https://api.api-ninjas.com/v1/city";
+  const API_URL = "/api/fetch_api_data";
   const cityForm = $("#cityForm");
   const searchBtn = $("#searchBtn");
   const cityInput = $("#city");
@@ -38,12 +37,11 @@ $(document).ready(function () {
     $.ajax({
       url: API_URL,
       type: "GET",
-      data: { name: city },
-      headers: { "X-Api-Key": API_KEY },
+      data: { city: city },
       success: function (response) {
-        if (response.length > 0) {
-          console.log(response[0]);
-          updateCityDetails(response[0]);
+        if (response) {
+          console.log(response);
+          updateCityDetails(response);
         } else {
           noDataMessage.removeClass("d-none");
         }
